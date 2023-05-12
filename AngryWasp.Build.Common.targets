@@ -12,7 +12,7 @@
         <DefineConstants>$(DefineConstants);WINDOWS;</DefineConstants>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.1;net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net7.0</TargetFrameworks>
         <PlatformTarget>AnyCPU</PlatformTarget>
         <LangVersion>latest</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -27,13 +27,13 @@
         <DebugSymbols>true</DebugSymbols>
         <DebugType>portable</DebugType>
         <Optimize>false</Optimize>
-        <DefineConstants>$(DefineConstants);DEBUG;TRACE;OPENGL;OPENAL;DESKTOPGL;SUPPORTS_EFX;UNSAFE;</DefineConstants>
+        <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
         <DebugSymbols>false</DebugSymbols>
         <DebugType>none</DebugType>
         <Optimize>true</Optimize>
         <Obfuscate>true</Obfuscate>
-        <DefineConstants>$(DefineConstants);OPENGL;OPENAL;DESKTOPGL;SUPPORTS_EFX;UNSAFE;</DefineConstants>
+        <DefineConstants>$(DefineConstants)</DefineConstants>
     </PropertyGroup>
 </Project>
