@@ -1,0 +1,19 @@
+rem | You're looking at a BasicScript file
+rem | If you want to run this file, get the basic script interpreter
+rem | dotnet tool install -g AngryWasp.BasicScript.Interpreter
+rem | Then run bsi ./myscript.bsi
+rem | For syntax highlighting and usage examples, check out the BasicScript repo
+rem | https://github.com/AngryWasp.BasicScript
+
+rem | project.bs should include
+rem | var repoName = "<repoName>"
+
+include "../../project.bs"
+
+const apiKey = read("NUGET_API_KEY")
+const version = "1.0.0"
+
+print repoName
+
+exec("dotnet", "pack -c Release Src/" + repoName + ".slnx -p:PackageVersion=" + version)
+exec("dotnet", "nuget push Bin/Binaries/" + repoName + "." + version + ".nupkg --source https://api.nuget.org/v3/index.json --api-key " + apiKey)
