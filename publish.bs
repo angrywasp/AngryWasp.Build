@@ -25,12 +25,12 @@ var major = 0
 var minor = 0
 var patch = 0
 
-if incrementLevel = "major" then
+if incrementLevel == "major" then
     major = int(semver[0]) + 1
     minor = 0
     patch = 0
 else
-    if incrementLevel = "minor" then
+    if incrementLevel == "minor" then
         major = int(semver[0])
         minor = int(semver[1]) + 1
         patch = 0
